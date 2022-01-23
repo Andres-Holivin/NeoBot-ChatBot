@@ -1,0 +1,32 @@
+name: Node.js CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+    - uses: actions/checkout@v2
+    - uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: zFaACGFdqSqXbCXBkRs5Aj1h
+        github-token: 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
+        vercel-args: '--prod' #Optional
+        vercel-org-id: 6q48gEMgIBP8P0DZKVz8DkP5
+        vercel-project-id: prj_7u59C3tCV4VMDyxtkFPF6Knk76xi
+        working-directory: ./
+    

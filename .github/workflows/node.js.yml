@@ -21,12 +21,11 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - uses: actions/checkout@v2
-    - uses: amondnet/vercel-action@v20
+    - uses: amondnet/vercel-action@v20.0.0
       with:
-        vercel-token: zFaACGFdqSqXbCXBkRs5Aj1h
+        vercel-token: 6q48gEMgIBP8P0DZKVz8DkP5
         github-token: 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
         vercel-args: '--prod' #Optional
         vercel-org-id: 6q48gEMgIBP8P0DZKVz8DkP5
         vercel-project-id: prj_7u59C3tCV4VMDyxtkFPF6Knk76xi
-        working-directory: ./
     

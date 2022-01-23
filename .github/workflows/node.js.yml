@@ -23,8 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: amondnet/vercel-action@v20.0.0
       with:
-        vercel-token: RR9AmUVQU6ALkig1rFE31TE4
-        github-token: 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
+        vercel-token: LsXA2XaGv1eheFk8SWZFwxyo
         vercel-args: '--prod' #Optional
         vercel-org-id: 6q48gEMgIBP8P0DZKVz8DkP5
         vercel-project-id: prj_7u59C3tCV4VMDyxtkFPF6Knk76xi
